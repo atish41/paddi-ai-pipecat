@@ -1,0 +1,25 @@
+# fly.toml app configuration file generated for pipecat-default-example-wispy-cloud-99 on 2024-11-11T23:11:45+05:30
+#
+# See https://fly.io/docs/reference/configuration/ for information about how to use this file.
+#
+
+app = 'pipecat-default-example-wispy-cloud-99'
+primary_region = 'sjc'
+
+[build]
+
+[env]
+  FLY_APP_NAME = 'pipecat-default-example-wispy-cloud-99'
+
+[http_service]
+  internal_port = 7860
+  force_https = true
+  auto_stop_machines = 'stop'
+  auto_start_machines = true
+  min_machines_running = 1
+  processes = ['app']
+
+[[vm]]
+  memory = '512'
+  cpu_kind = 'shared'
+  cpus = 1
